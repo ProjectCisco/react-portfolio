@@ -72,7 +72,8 @@
 }
 
 .description {
-  max-width: 30ch;
+  max-width: 32ch;
+  margin: 0 auto;
 }
 
 .info {

@@ -39,7 +39,8 @@ function Avatar() {
             <img src={xIcon} alt="xIcon" />
           </a>
         </span>
-        <p className={styles.description} >Passionate Full-Stack Developer dedicated to building robust and efficient solutions.</p>
+        <p className={styles.description} >Passionate Full-Stack Developer dedicated to clean code, scalability, and efficiency. 
+          Always exploring new technologies to build robust, innovative, and impactful solutions.</p>
         <a href={CV} download><button className="hover">Resume</button></a>
       </div>
     </section>
