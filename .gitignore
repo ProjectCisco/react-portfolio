@@ -22,4 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-.pdf
+
+# Ignore all PDF files
+*.pdf
