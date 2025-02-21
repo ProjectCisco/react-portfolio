@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  img {
+    max-width: 21.75rem;
+    align-self: center;
+    background-color: var(--project-card-bg);
+    border-radius: 1rem;
+  }
+
+  a {
+    width: fit-content;
+    text-decoration: none;
+    color: #222;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+  }
+
+  .projectsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem; 
+  }
+}
