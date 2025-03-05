@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import { SocialIcon, FolderIcon, TechIcon } from "../../components/Icons";
-import iconStyles from "../../components/iconsStyles.module.css";       
+import iconStyles from "../../components/IconsStyles.module.css";       
 import projectStyles from "./ProjectsStyles.module.css";
 function ProjectsCard({ title, description, href, github, tech1, tech2, tech3, tech4 }) {
   const techs = [tech1, tech2, tech3, tech4].filter(Boolean);
