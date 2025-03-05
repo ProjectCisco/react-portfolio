@@ -1,0 +1,48 @@
+.typewriter {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
+  color: #5f1fc0; 
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline;
+}
+
+.typewriterPrefix {
+  font-weight: 700;
+  font-family: 'Ubuntu', sans-serif;
+  transition: color 0.3s ease-in-out;
+}
+
+[data-theme="light"] .typewriterPrefix {
+  color: #222; 
+}
+
+[data-theme="dark"] .typewriterPrefix {
+  color: #ffffff; 
+}
+
+.cursor {
+  display: inline;
+  font-weight: 400;
+  animation: blink 1s infinite;
+  color: #5f1fc0; 
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 768px) {
+  .typewriter {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .typewriter {
+    font-size: 16px;
+  }
+}
