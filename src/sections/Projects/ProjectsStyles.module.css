@@ -75,11 +75,6 @@
   gap: 10px;
 }
 
-.folderIcon {
-  font-size: 2rem;
-  color: var(--icon-color);
-  transition: color 0.2s ease-in-out;
-}
 
 .projectTitle {
   font-size: 1.5rem;
@@ -122,24 +117,6 @@
 .techItem svg {
   margin-right: 5px;
   font-size: 1.2rem;
-}
-
-.projectIcons {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-}
-
-.projectIcons a {
-  text-decoration: none;
-  color: var(--icon-color);
-  font-size: 1.7rem;
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.projectIcons a:hover {
-  color: var(--btn-color);
-  transform: scale(1.1);
 }
 
 @media (max-width: 1024px) {
