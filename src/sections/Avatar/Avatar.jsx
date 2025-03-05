@@ -3,7 +3,7 @@ import iconStyles from "../../components/iconsStyles.module.css";
 import TypeWriter from "../../components/TypeWriter";
 import avatarStyles from "./AvatarStyles.module.css"; 
 import avatarImage from "../../assets/avatar-img.png";
-import Resume from "../../assets/SGA-Resume.pdf";
+import Resume from "../../assets/SGA-Resume-Git.pdf";
 
 const Avatar = () => {
   const scrollToContact = () => {
