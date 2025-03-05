@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { FaGithub, FaLinkedin, FaXTwitter, FaRegFolderOpen } from "react-icons/fa6";
+import iconStyles from "./iconsStyles.module.css";
 import { FaCheckCircle, FaExternalLinkAlt, FaWrench } from "react-icons/fa";
 import {
   SiReact,
@@ -15,27 +15,37 @@ import {
   SiGit,
   SiPython
 } from "react-icons/si";
+import { 
+  FaGithub, 
+  FaLinkedin, 
+  FaXTwitter, 
+  FaRegFolderOpen, 
+  FaInstagram, 
+  FaSpotify 
+} from "react-icons/fa6";
 
 export const SocialIcon = ({ kind, href, size = 24 }) => {
   if (!href) return null;
 
   const iconMap = {
-    github: <FaGithub size={size} className="icon" />,
-    linkedin: <FaLinkedin size={size} className="icon" />,
-    twitter: <FaXTwitter size={size} className="icon" />,
-    external: <FaExternalLinkAlt size={size} className="icon" />,
-    checkmark: <FaCheckCircle size={size} className="icon" />,
+    github: <FaGithub size={size} className={iconStyles.icon} />,
+    linkedin: <FaLinkedin size={size} className={iconStyles.icon} />,
+    twitter: <FaXTwitter size={size} className={iconStyles.icon} />,
+    instagram: <FaInstagram size={size} className={iconStyles.icon} />,
+    spotify: <FaSpotify size={size} className={iconStyles.icon} />,
+    external: <FaExternalLinkAlt size={size} className={iconStyles.icon} />,
+    checkmark: <FaCheckCircle size={size} className={iconStyles.icon} />,
   };
 
   return (
-    <a className="social-icon" target="_blank" rel="noopener noreferrer" href={href}>
+    <a className={iconStyles.socialIcon} target="_blank" rel="noopener noreferrer" href={href}>
       {iconMap[kind]}
     </a>
   );
 };
 
 SocialIcon.propTypes = {
-  kind: PropTypes.oneOf(["github", "linkedin", "twitter", "external", "checkmark"]).isRequired,
+  kind: PropTypes.oneOf(["github", "linkedin", "twitter", "instagram", "spotify", "external", "checkmark"]).isRequired,
   href: PropTypes.string.isRequired,
   size: PropTypes.number,
 };
@@ -66,7 +76,8 @@ TechIcon.propTypes = {
 };
 
 export const FolderIcon = ({ size = 50 }) => {
-  return <FaRegFolderOpen size={size} className="folder-icon" style={{ color: "#5f1fc0" }} />;
+  // Instead of an inline style, use the module class so that the color comes from global CSS variables.
+  return <FaRegFolderOpen size={size} className={iconStyles.folderIcon} />;
 };
 
 FolderIcon.propTypes = {
