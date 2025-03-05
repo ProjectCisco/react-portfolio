@@ -1,50 +1,67 @@
-import styles from './AvatarStyles.module.css';
-import avatarImage from '../../assets/avatar-img.png';
-import sun from '../../assets/sun.svg';
-import moon from '../../assets/moon.svg';
-import linkinLight from '../../assets/linkedin-light.svg';
-import linkinDark from '../../assets/linkedin-dark.svg';
-import githubLight from '../../assets/github-light.svg';
-import githubDark from '../../assets/github-dark.svg';
-import xLight from '../../assets/x-light.svg';
-import xDark from '../../assets/x-dark.svg';
-import CV from '../../assets/CV.pdf';
-import { useTheme } from '../../Common/ThemeContext';
+import { SocialIcon } from "../../components/Icons";
+import iconStyles from "../../components/iconsStyles.module.css";
+import TypeWriter from "../../components/TypeWriter";
+import avatarStyles from "./AvatarStyles.module.css"; 
+import avatarImage from "../../assets/avatar-img.png";
+import Resume from "../../assets/SGA-Resume.pdf";
 
-function Avatar() {
-  const { theme, toggleTheme } = useTheme();
-
-  const themeIcon = theme === 'light' ? sun : moon;
-  const linkinIcon = theme === 'light' ? linkinLight : linkinDark;
-  const githubIcon = theme === 'light' ? githubLight : githubDark;
-  const xIcon = theme === 'light' ? xLight : xDark;
+const Avatar = () => {
+  const scrollToContact = () => {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
-    <section id="avatar" className={styles.container}>
-      <div className={styles.colorModeContainer}>
-        <img className={styles.avatar} src={avatarImage} alt="Profile Avatar" />
-        <img className={styles.colorMode} src={themeIcon} alt="ColorModeIcon" onClick={toggleTheme} />
-      </div>
-      <div className={styles.info}>
-        <h1>Project <br /> Cisco</h1>
-        <h2>Full Stack Developer</h2>
-        <span>
-          <a href="https://linkedin.com/in/sga-8102ab139" target="_blank">
-            <img src={linkinIcon} alt="LinkedIcon" />
-          </a>
-          <a href="https://github.com/ProjectCisco" target="_blank">
-            <img src={githubIcon} alt="GithubIcon" />
-          </a>
-          <a href="https://x.com/project_cisco" target="_blank">
-            <img src={xIcon} alt="xIcon" />
-          </a>
-        </span>
-        <p className={styles.description} >Passionate Full-Stack Developer dedicated to clean code, scalability, and efficiency. 
-          Always exploring new technologies to build robust, innovative, and impactful solutions.</p>
-        <a href={CV} download><button className="hover">Resume</button></a>
+    <section className={avatarStyles.avatarSection}>
+      <div className={avatarStyles.avatarContainer}>
+        <div className={avatarStyles.avatarImageContainer}>
+          <img src={avatarImage} alt="Avatar" className={avatarStyles.avatarImage} />
+        </div>
+        <div className={avatarStyles.textContainer}>
+          <h1 className={avatarStyles.greeting}>
+            Hi, I&apos;m <span className={avatarStyles.nameHighlight}>Project Cisco</span> 👋
+          </h1>
+          <TypeWriter
+            words={[
+              "a Full-Stack Developer.",
+              "an Open Source Contributor.",
+              "a Tech Enthusiast."
+            ]}
+            delay={110} 
+            infinite={true}
+          />
+          <div className={avatarStyles.infoContainer}>
+            <p className={avatarStyles.infoItem}>☕ Fueled by coffee</p>
+            <p className={avatarStyles.infoItem}>🌍 Based in the UK</p>
+          </div>
+          <div className={avatarStyles.buttons}>
+          <button
+            onClick={() => {
+            const link = document.createElement("a");
+            link.href = Resume;
+            link.setAttribute("download", "SGA-Resume.pdf");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            }}
+            className={avatarStyles.button}
+            >
+            Resume
+          </button>
+            <button onClick={scrollToContact} className={avatarStyles.button}>
+              Contact Me
+            </button>
+          </div>
+          <div className={iconStyles.socialIcons}>
+            <SocialIcon kind="github" href="https://github.com/your-profile" />
+            <SocialIcon kind="linkedin" href="https://linkedin.com/in/your-profile" />
+            <SocialIcon kind="twitter" href="https://twitter.com/your-profile" />
+            <SocialIcon kind="instagram" href="https://instagram.com/your-profile" />
+            <SocialIcon kind="spotify" href="https://open.spotify.com/user/your-profile" />
+          </div>
+        </div>
       </div>
     </section>
   );
-}
+};
 
 export default Avatar;
