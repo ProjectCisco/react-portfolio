@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import iconStyles from "./IconsStyles.module.css";
+import iconStyles from "./iconsStyles.module.css";
 import { FaCheckCircle, FaExternalLinkAlt, FaWrench } from "react-icons/fa";
 import {
   SiReact,

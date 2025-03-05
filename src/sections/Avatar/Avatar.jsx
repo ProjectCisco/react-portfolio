@@ -1,5 +1,5 @@
 import { SocialIcon } from "../../components/Icons";
-import iconStyles from "../../components/IconsStyles.module.css";
+import iconStyles from "../../components/iconsStyles.module.css";
 import TypeWriter from "../../components/TypeWriter";
 import avatarStyles from "./AvatarStyles.module.css"; 
 import avatarImage from "../../assets/avatar-img.png";
